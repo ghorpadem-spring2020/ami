@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  pr_merge:
+  build:
     working_directory: ~/repo
 
     steps:
@@ -17,13 +17,13 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: packer build ubuntu-ami.json
+      - run: packer build -var 'aws_access_key'=$aws_access_key -var 'aws_secret_key'=$aws_secret_key -var 'aws_region'=$aws_region ubuntu-ami.json
 
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
 
 workflows:
   version: 2
-  pr-merge:
+  build_deploy:
     jobs:
-      - pr_merge
+      - build
