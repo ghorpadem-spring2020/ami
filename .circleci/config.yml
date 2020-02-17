@@ -12,8 +12,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Validate base
-        command: packer validate ./ubuntu-ami.json
+          name: Validate base
+          command: packer validate ./ubuntu-ami.json
       - run: packer build -var 'aws_access_key'=$aws_access_key -var 'aws_secret_key'=$aws_secret_key -var 'aws_region'=$aws_region ubuntu-ami.json
 
 
