@@ -5,4 +5,4 @@ packer_cache/
 *.box
 
 
-vars.json
+var.json
