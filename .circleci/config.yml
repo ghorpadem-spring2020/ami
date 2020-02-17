@@ -5,13 +5,15 @@
 version: 2
 jobs:
   build:
-    machine:
-      image: ubuntu-1604:201903-01 
-    working_directory: ~/repo
+    docker:
+      - image: hashicorp/packer:1.1.1
+    working_directory: ~/packer
 
     steps:
       - checkout
-      - run : apt-get install packer
+      -run:
+        name: Validate base
+        command: packer validate ./ubuntu-ami.json
       - run: packer build -var 'aws_access_key'=$aws_access_key -var 'aws_secret_key'=$aws_secret_key -var 'aws_region'=$aws_region ubuntu-ami.json
 
 
