@@ -14,7 +14,7 @@ jobs:
       - run:
           name: Validate base
           command: packer validate ./ubuntu-ami.json
-      - run: packer build -var 'aws_access_key'=$aws_access_key -var 'aws_secret_key'=$aws_secret_key -var 'aws_region'=$aws_region ubuntu-ami.json
+      - run: packer build -var 'aws_access_key'=$aws_access_key -var 'aws_secret_key'=$aws_secret_key -var 'aws_region'=$aws_region -var 'ami_users'=$ami_users -var 'source_ami'=$source_ami -var 'ssh_username'=$ssh_username ubuntu-ami.json
 
 
 workflows:
