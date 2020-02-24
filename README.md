@@ -12,6 +12,7 @@ packer build \
     ubuntu-ami.json
      OR
      packer build -var-file=./vars.json ubuntu-ami.json
+     
 
 ## CircleCi
 This Repository is listen by CircleCi build job.
