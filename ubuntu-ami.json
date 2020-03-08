@@ -43,9 +43,18 @@
                 "sudo apt-get update",
                 "sudo apt-get install curl",
                 "curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -",
-                "sudo apt-get install nodejs -y"
+                "sudo apt-get install nodejs -y",
+                "sudo apt-get install ruby -y",
+                "sudo apt-get install wget -y",
+                "cd /home/ubuntu",
+                "sudo wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install",
+                "sudo chmod +x ./install",
+                "sudo ./install auto",
+                "sudo service codedeploy-agent start"
+
+
             ]
         }
     ],
-    "description":"AMI with ubuntu, nodejs, mariadb"
+    "description":"AMI with ubuntu, nodejs, mariadb, and code deploy agent"
 }
