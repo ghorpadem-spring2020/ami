@@ -13,7 +13,6 @@ packer build \
      OR
      packer build -var-file=./vars.json ubuntu-ami.json
      
-
 ## CircleCi
 This Repository is listen by CircleCi build job.
 Every time Changes are merged to Master branch, an AMI is created by using packer.
