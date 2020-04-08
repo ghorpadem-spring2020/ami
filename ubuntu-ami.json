@@ -54,7 +54,8 @@
                 "sudo service codedeploy-agent start",
                 "cd ..",
                 "sudo wget https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb",
-                "sudo sudo dpkg -i -E ./amazon-cloudwatch-agent.deb"
+                "sudo sudo dpkg -i -E ./amazon-cloudwatch-agent.deb",
+                "sudo wget https://s3.amazonaws.com/rds-downloads/rds-ca-2019-root.pem"
 
 
             ]
